@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <title>동물로 알아보는 MBTI</title>
+
+    <link rel="stylesheet" href="/css/fun-btn.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+
+
+    </style>
+</head>
+
+
+<body>
+    <div id="body-container">
+        <div id="body">
+            <img src="/img/title.png" class="title-img">
+
+
+            <button id="btn_start" class="fun-btn" onclick="start()">
+                Click!
+            </button>
+        </div>
+    </div>
+
+</body>
+<script src="//code.jquery.com/jquery-3.5.1.min.js"></script>
+
+<script>
+    const body = $("#body");
+
+    let choices;
+    let questions;
+
+    $.getJSON("/get_questions.php", function (response) {
+        questions = response;
+
+        if (choices !== undefined) {
+            $("#btn_start").css("opacity", "1");
+        }
+
+    });
+
+    $.getJSON("/get_choices.php", function (response) {
+        choices = response;
+
+        if (questions !== undefined) {
+            $("#btn_start").css("opacity", "1");
+        }
+    });
+</script>
+<script>
+
+    let choiced = "";
+    let choicesIndex = 0;
+    let questionsIndex = 0;
+
+    function start() {
+        body.empty();
+
+        $("<h1>")
+            .append("Loading. . .")
+            .css("display", "none")
+            .fadeIn(500)
+            .appendTo(body);
+            $("<div>").addClass("progress-bar-container").appendTo($("#body-container"));
+            $("<div>").addClass("progress-bar").appendTo($(".progress-bar-container"));
+            $(".progress-bar").html(choiced.length * 5 + "%")
+        setTimeout(() => {
+            body.empty();                        
+            appendImg(body);
+        }, 1000);
+
+
+    }
+
+    function next(value) {
+        choiced += value;
+        $(".progress-bar").css("width", choiced.length * 5 + "%")
+        $(".progress-bar").html(choiced.length * 5 + "%")
+        $(".choice").attr("disabled", "disabled");
+        $(".q").css("animation-name", "fadeOutLeft");
+        $(".question").css("animation-name", "fadeOutLeft");
+        $(".choice").css("animation-name", "fadeOutLeft");
+
+        setTimeout(() => {
+            body.empty();
+
+            if (choicesIndex >= choices.length) {
+                showResult(choiced);
+                return;
+            }
+            appendImg(body);
+        }, 700);
+
+
+
+    }
+
+    function showResult(choiced) {
+        body.empty();
+        $("<h1>")
+            .append("Loading . . .")
+            .css("display", "none")
+            .fadeIn(500)
+            .appendTo(body);
+
+
+        $.getJSON("/getResult.php",
+            {
+                choiced
+            },
+            function (response) {
+                setTimeout(() => {
+
+                    $(".progress-bar-container").remove();
+                    body.empty();
+
+                    let $div = $('<div></div>').addClass("result-container");
+                    $('<h1>')
+                        .append(response['value'])
+                        .addClass("result-value")
+                        .appendTo($div);
+                    $('<img>')
+                        .attr("src", response['img_path'])
+                        .addClass("result-img")
+                        .appendTo($div);
+                    $('<h1>')
+                        .append(response['title'])
+                        .addClass("result-title")
+                        .appendTo($div);
+                    $('<p>')
+                        .append(response['text'])
+                        .addClass("result-text")
+                        .appendTo($div);
+
+                    $div.appendTo(body);
+
+                    //==negative==//
+                    $div = $('<div></div>').addClass("result-negative-container");
+                    $("<h1>")
+                        .append("나와 안 맞는 유형")
+                        .appendTo($div);
+
+                    $("<h2>")
+                        .append(response["negative"]["value"])
+                        .addClass("result-negative-value")
+                        .appendTo($div);
+                    
+                    $("<img>")
+                        .attr("src", response["negative"]['img_path'])
+                        .addClass("result-negative-img")
+                        .click(function () {
+                            showResult(response["negative"]["value"]);  
+                        })
+                        .appendTo($div);
+                    $("<h2>")
+                        .append(response["negative"]["title"])
+                        .addClass("result-negative-title")
+                        .appendTo($div);
+                    $div.appendTo(body);
+
+                    //==positive==//
+                    $div = $('<div></div>')
+                        .addClass("result-positive-container");
+                    $("<h1>")
+                        .append("나와 잘 맞는 유형")
+                        .appendTo($div);
+                    $("<h2>")
+                        .append(response["positive"]["value"])
+                        .addClass("result-positive-value")
+                        .appendTo($div);
+                    $("<img>")
+                        .attr("src", response["positive"]['img_path'])
+                        .addClass("result-positive-img")
+                        .click(function () {
+                            showResult(response["positive"]["value"]);  
+                        })
+                        .appendTo($div);
+                    $("<h2>")
+                        .append(response["positive"]["title"])
+                        .addClass("result-positive-title")
+                        .appendTo($div);
+                    $div.appendTo(body);
+                }, 1000);
+
+            });
+        // recordResult(resultId);
+    }
+
+    function recordResult(resultId) {
+
+    }
+
+    function appendImg(target) {
+        let $div = $('<div></div>');
+        // TODO : update to clean code
+
+        // header
+        $("<h1>")
+            .append("Q" + (questionsIndex + 1))
+            .appendTo(target)
+            .addClass("q")
+            .css("margin-top", "0px")
+            .css("margin-bottom", "-20px")
+            .css("text-align", "left")
+            .css("display", "none")
+            .css("font-size", "60px")
+            .fadeIn(1450);
+
+        $("<h1>")
+            .append((questionsIndex + 1) + "/" + (questions.length))
+            .appendTo(target)
+            .addClass("q")
+            .css("margin-top", "-10px")
+            .css("font-size", "30px")
+            .css("color", "gray")
+            .css("text-align", "left")
+            .css("display", "none")
+            .fadeIn(1450);
+
+
+        // question
+        $("<p>")
+            .append(questions[questionsIndex++]['text'])
+            .css("display", "none")
+            .addClass("question")
+            .appendTo(target)
+            .fadeIn(1450);
+
+        // choices
+
+        for (let i = 0; i < 2; i++) {
+
+            $("<button>")
+                .attr("onclick", 'next("' + choices[choicesIndex]['value'] + '")')
+                .append(choices[choicesIndex]['text'])
+                .addClass("choice")
+                .css("display", "none")
+                .appendTo($div)
+                .fadeIn(1000);
+            choicesIndex++;
+        }
+
+
+        $div.appendTo(target);
+    }
+</script>
+
+</html>
