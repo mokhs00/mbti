@@ -174,11 +174,13 @@ body {
 .result-negative-img{
     height: 250px;
     transition: all 1s;    
+    animation-duration: 1.5s;
+    animation-delay: 0.1s;
 }
 
 .result-negative-img:hover{
-    cursor: pointer;   
-    height: 280px;
+    cursor: pointer;       
+    animation-name: fadeInUp;
 
 }
 
@@ -204,12 +206,13 @@ body {
 .result-positive-img{
     height: 250px;
     transition: all 1s;
-    
+    animation-duration: 1.5s;
+    animation-delay: 0.1s;    
 }
 .result-positive-img:hover{
-    height: 280px;
     position: relative;
     cursor: pointer;    
+    animation-name: fadeInUp;
 }
 
 
