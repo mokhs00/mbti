@@ -141,6 +141,13 @@ body {
 
 }
 
+.result-img:hover{
+    animation-duration: 1s;
+    animation-delay: 0.1s;
+    animation-name: bounce;
+
+}
+
 .result-value{
     font-size : 60px;
     color : #F3B0CB;
@@ -162,7 +169,6 @@ body {
     
 }
 
-
 .result-negative-title{
     font-size: 27px;
 }
@@ -173,14 +179,13 @@ body {
 
 .result-negative-img{
     height: 250px;
-    transition: all 1s;    
     animation-duration: 1.5s;
     animation-delay: 0.1s;
 }
 
 .result-negative-img:hover{
     cursor: pointer;       
-    animation-name: fadeInUp;
+    animation-name: bounce;
 
 }
 
@@ -205,14 +210,12 @@ body {
 
 .result-positive-img{
     height: 250px;
-    transition: all 1s;
-    animation-duration: 1.5s;
+    animation-duration: 1s;
     animation-delay: 0.1s;    
 }
 .result-positive-img:hover{
-    position: relative;
     cursor: pointer;    
-    animation-name: fadeInUp;
+    animation-name: bounce;
 }
 
 
