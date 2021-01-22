@@ -1,9 +1,6 @@
 <?php include 'db.php';
 
-
-
     $result = $db->query('SELECT * FROM question');
-    
 
     $response = [];
     
