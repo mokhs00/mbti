@@ -25,6 +25,7 @@
             <button id="btn_start" class="fun-btn" onclick="start()">
                 Click!
             </button>
+
         </div>
     </div>
 
@@ -36,6 +37,8 @@
 
     let choices;
     let questions;
+
+    let recorded = false;
 
     $.getJSON("/get_questions.php", function (response) {
         questions = response;
@@ -53,8 +56,7 @@
             $("#btn_start").css("opacity", "1");
         }
     });
-</script>
-<script>
+    //==========================================================================//
 
     let choiced = "";
     let choicesIndex = 0;
@@ -68,11 +70,11 @@
             .css("display", "none")
             .fadeIn(500)
             .appendTo(body);
-            $("<div>").addClass("progress-bar-container").appendTo($("#body-container"));
-            $("<div>").addClass("progress-bar").appendTo($(".progress-bar-container"));
-            $(".progress-bar").html(choiced.length * 5 + "%")
+        $("<div>").addClass("progress-bar-container").appendTo($("#body-container"));
+        $("<div>").addClass("progress-bar").appendTo($(".progress-bar-container"));
+        $(".progress-bar").html(choiced.length * 5 + "%")
         setTimeout(() => {
-            body.empty();                        
+            body.empty();
             appendImg(body);
         }, 1000);
 
@@ -151,12 +153,12 @@
                         .append(response["negative"]["value"])
                         .addClass("result-negative-value")
                         .appendTo($div);
-                    
+
                     $("<img>")
                         .attr("src", response["negative"]['img_path'])
                         .addClass("result-negative-img")
                         .click(function () {
-                            showResult(response["negative"]["value"]);  
+                            showResult(response["negative"]["value"]);
                         })
                         .appendTo($div);
                     $("<h2>")
@@ -179,7 +181,7 @@
                         .attr("src", response["positive"]['img_path'])
                         .addClass("result-positive-img")
                         .click(function () {
-                            showResult(response["positive"]["value"]);  
+                            showResult(response["positive"]["value"]);
                         })
                         .appendTo($div);
                     $("<h2>")
@@ -187,13 +189,32 @@
                         .addClass("result-positive-title")
                         .appendTo($div);
                     $div.appendTo(body);
+
+                    recordResult(response["id"]);
+
+                    appendRecordTo($("#body-container"));
+
                 }, 1000);
 
+
+
             });
-        // recordResult(resultId);
     }
 
     function recordResult(resultId) {
+        if (!recorded) {
+            recorded = true;
+            $.post("/record.php", { resultId : resultId });
+        }
+    }
+
+    function appendRecordTo(target) {
+
+        $.getJSON("/get_record.php", function (response) {
+            $(".recorde-count").remove();
+            $("<div>").addClass("record-count").append("누적 사용자 수 :" + response + " 명").appendTo(target);
+
+        });
 
     }
 
@@ -249,6 +270,8 @@
 
 
         $div.appendTo(target);
+
+
     }
 </script>
 
