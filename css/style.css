@@ -90,13 +90,16 @@ body {
             rgb(249, 255, 234) 100%);
 }
 
+#body{
+    display: flow-root;
+}
+
 
 #body-container {    
     position: absolute;
     left: 50%;
     top: 40%;
     width: 500px;
-    height: 400px;
     margin-top: -300px;
     margin-left: -350px;
     animation-duration: 1.5s;
@@ -166,7 +169,6 @@ body {
     float: right;
     width: 49%;
     text-align: center;
-    
 }
 
 .result-negative-title{
@@ -216,6 +218,23 @@ body {
 .result-positive-img:hover{
     cursor: pointer;    
     animation-name: bounce;
+}
+
+.share-container{
+    margin: 30px auto;
+    font-size : 25px;
+    text-align: center;
+}
+
+.kakao-share-button img{
+    margin: 1px auto;
+    animation-duration: 1s;
+    animation-delay: 0.1s; 
+}
+
+.kakao-share-button img:hover{
+    animation-name: bounce;
+
 }
 
 

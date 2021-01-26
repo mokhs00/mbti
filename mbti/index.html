@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="/icon.ico" rel="shortcut icon" type="image/x-icon">
     <title>동물로 알아보는 MBTI</title>
 
     <link rel="stylesheet" href="/css/fun-btn.css">
@@ -18,7 +19,7 @@
 
 <body>
     <div id="body-container">
-        <div id="body">
+        <div id="body" >
             <img src="/img/title.png" class="title-img">
 
 
@@ -26,12 +27,42 @@
                 Click!
             </button>
 
+
         </div>
     </div>
 
 </body>
 <script src="//code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+<script>
 
+    const url = "https://www.naver.com";
+    Kakao.init('0a56bd6a7b51f46065488a7b94ba2d5f');
+    function sendLink() {
+        Kakao.Link.sendDefault({
+            objectType: 'feed',
+            content: {
+                title: '동물로 알아보는 MBTI!',
+                description: '#내 MBTI는? #귀여운 #동물로 #알아보는 #mbti ',
+                imageUrl:
+                    url + '/img/title.png',
+                link: {
+                    mobileWebUrl: url,
+                    webUrl: url,
+                },
+            },
+            buttons: [
+                {
+                    title: '웹으로 보기',
+                    link: {
+                        mobileWebUrl: url,
+                        webUrl: url,
+                    },
+                }
+            ],
+        })
+    }
+</script>
 <script>
     const body = $("#body");
 
@@ -40,6 +71,24 @@
 
     let recorded = false;
 
+    //==urlparams==//
+    function getUrlParams() {
+        var params = {};
+        window.location.search
+            .replace(
+                /[?&]+([^=&]+)=([^&]*)/gi,
+                function (str, key, value) { params[key] = value; }
+            );
+        return params;
+    }
+    const urlParams = getUrlParams();
+
+    if (urlParams["type"]) {
+        recorded = true;
+        showResult(urlParams["type"]);
+    }
+
+    //==getQuestions==//
     $.getJSON("/get_questions.php", function (response) {
         questions = response;
 
@@ -56,14 +105,37 @@
             $("#btn_start").css("opacity", "1");
         }
     });
+
+    addShareButton();
     //==========================================================================//
 
     let choiced = "";
     let choicesIndex = 0;
     let questionsIndex = 0;
 
+    function addShareButton() {
+
+        if ($(".share-container")) {
+            $(".share-container").remove();
+            
+        }
+
+
+        $("<div>").addClass("share-container")
+            .append("<p>공유하기</p>")
+            .append($("<a>")
+                .addClass("kakao-share-button")
+                .attr("href","javascript:sendLink()")
+                .append(
+                    $("<img>")
+                        .attr("src", "https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png")
+                ))
+            .appendTo($("#body-container"));
+    }
+
     function start() {
         body.empty();
+        $(".share-container").remove();
 
         $("<h1>")
             .append("Loading. . .")
@@ -165,6 +237,7 @@
                         .append(response["negative"]["title"])
                         .addClass("result-negative-title")
                         .appendTo($div);
+
                     $div.appendTo(body);
 
                     //==positive==//
@@ -188,11 +261,16 @@
                         .append(response["positive"]["title"])
                         .addClass("result-positive-title")
                         .appendTo($div);
+
                     $div.appendTo(body);
+
 
                     recordResult(response["id"]);
 
-                    appendRecordTo($("#body-container"));
+                    appendRecordTo(body);
+
+                    addShareButton();
+
 
                 }, 1000);
 
@@ -204,14 +282,15 @@
     function recordResult(resultId) {
         if (!recorded) {
             recorded = true;
-            $.post("/record.php", { resultId : resultId });
+            $.post("/record.php", { resultId: resultId });
         }
     }
 
     function appendRecordTo(target) {
 
+
         $.getJSON("/get_record.php", function (response) {
-            $(".recorde-count").remove();
+            $(".record-count").remove();
             $("<div>").addClass("record-count").append("누적 사용자 수 :" + response + " 명").appendTo(target);
 
         });
