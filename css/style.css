@@ -156,6 +156,8 @@
     font-weight: bold;
     color: #c6c7df;
     width : 100%;
+    position: fixed;
+    z-index: 1;
 }
 
 
