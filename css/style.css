@@ -5,33 +5,33 @@
 }
 
 * {
-
     font-family: gabia_solmee;
+    letter-spacing: -.7px;
+
 }
 
 /*====main-btn====*/
-.fun-btn {
+.start-btn {
     background-color: #EE8CB4;
     color: white;
     border: none;
-    transition: all .3s ease;
     border-radius: 5px;
     letter-spacing: 2px;
     outline: none;
     font-size: 30px;
     padding: 30px;
-    margin: 0px;
-    align-self: center;
+    margin: 0px auto;
     cursor: pointer;
     font-weight: bold;
-    animation-name: grow;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-
+    position: relative;
     opacity: 0;
-    width: 100%;
-
+    width: 50%;
+    display: block;
+    animation-duration: 1.5s;
+    animation-delay: 1s;
+    
 }
+
 
 h1 {
     text-align: center;
@@ -69,7 +69,7 @@ h1 {
 .q {
     animation-duration: 0.7s;
     animation-delay: 0.1s;
-    animation-name: fadeInRight;
+    animation-name: bounceInDown;
 }
 
 .q {
@@ -85,13 +85,11 @@ h1 {
 }
 
 body {
-    background: radial-gradient(circle,
-            white 0%,
-            rgb(249, 255, 234) 100%);
 }
 
 #body{
     display: flow-root;
+    position: relative;
 }
 
 
@@ -102,11 +100,9 @@ body {
     width: 500px;
     margin-top: -300px;
     margin-left: -350px;
-    animation-duration: 1.5s;
-    animation-delay: 0.1s;
-    animation-name: fadeInUp;
     border-radius: 10px;
     padding: 100px;
+    display: none;
 }
 
 
@@ -140,13 +136,11 @@ body {
 
 
 .result-container{
-    border-bottom : 1px black solid;
 
 }
 
 .result-img:hover{
     animation-duration: 1s;
-    animation-delay: 0.1s;
     animation-name: bounce;
 
 }
@@ -154,7 +148,6 @@ body {
 .result-value{
     font-size : 60px;
     color : #F3B0CB;
-    border-bottom : 1px black solid;
 }
 
 .result-title{
@@ -172,16 +165,12 @@ body {
 }
 
 .result-negative-title{
-    font-size: 27px;
+    margin-bottom: 1px;
 }
 
-.result-negative-img{
-    height: 250px;
-}
 
 .result-negative-img{
-    height: 250px;
-    animation-duration: 1.5s;
+    animation-duration: 1s;
     animation-delay: 0.1s;
 }
 
@@ -203,7 +192,8 @@ body {
 }
 
 .result-positive-title{
-    font-size: 27px;
+    margin-bottom: 1px;
+    
 }
 .result-positive-value{
     color: blue;
@@ -211,7 +201,6 @@ body {
 }
 
 .result-positive-img{
-    height: 250px;
     animation-duration: 1s;
     animation-delay: 0.1s;    
 }

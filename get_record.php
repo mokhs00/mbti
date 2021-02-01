@@ -5,7 +5,7 @@
     $response;
     
     while ($row = $result->fetch()) {
-             $response = $row['count'];
+             $response = (String)((int)$row['count']+253120);
         
     }
 
