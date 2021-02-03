@@ -38,17 +38,17 @@
     margin-top: 62px;
     position: absolute;
     transition: 1s;
-    width: 120px;
+    animation-duration: 1s;
+
 }
 
 .result-img:hover{
-    animation-duration: 1s;
-    animation-name: bounce;
+
 }
 
 
 .result-value {
-    font-size: 62px;
+    font-size: 80px;
     color: black;
     font-style: italic;
     font-weight: bolder;
@@ -61,7 +61,7 @@
 }
 
 .result-title {
-    font-size: 16px;
+    font-size: 20px;
     color: #4f4f4f;
     position: absolute;
     font-weight: 400;
@@ -95,11 +95,11 @@
 .result-value-under-bar {
     background-color: black;
     border-radius: 2.5px;
-    width: 88px;
+    width: 120px;
     height: 5px;
     position: absolute;
     left: 35px;
-    margin-top: 90px;
+    margin-top: 105px;
 }
 
 .result-middle-text {
@@ -107,7 +107,7 @@
     margin: 20px 0;
     font-size: 24px;
     animation-duration: 1s;
-    background: #ff4251;
+    background: black;
     border-radius: 20px;
     padding: 1px;
     padding-top: 6px;
@@ -143,8 +143,14 @@
 .share-btns img {
     margin: 0 10px;
     width: 60px;
+    animation-duration: 1s;
+}
+
+.share-btns img:hover {
+    animation-name: bounce;
 
 }
+
 
 .header{
     background-color: black;
@@ -341,15 +347,8 @@ body {
     text-align: center;
 }
 
-.kakao-share-button img{
-    margin: 1px auto;
-    animation-duration: 1s;
-    animation-delay: 0.1s; 
-}
 
-.kakao-share-button img:hover{
-    animation-name: bounce;
 
-}
+
 
 
