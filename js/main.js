@@ -1,4 +1,4 @@
-const url = "https://www.naver.com";
+const url = location.protocol + "//" + location.host;
 
     //==body==//
     const body = $("#body");
