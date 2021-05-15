@@ -1,0 +1,322 @@
+[
+    {
+       "id":"1",
+       "text":"\uc5f0\uc778\uacfc \ub180\uc774\ub3d9\uc0b0\uc744 \uac04 \uc0c1\ud669",
+       "choices":[
+          {
+             "id":"1",
+             "text":"\uc5b4\ub5a4 \ub180\uc774\uae30\uad6c\ub97c \ud0c8\uc9c0 \ubbf8\ub9ac \uacc4\ud68d\uc744 \uc138\uc6b4\ub2e4",
+             "value":"J"
+          },
+          {
+             "id":"2",
+             "text":"\uc77c\ub2e8 \uc7ac\ubc0c\uc5b4 \ubcf4\uc774\ub294 \uac83\ubd80\ud130 \ud0c4\ub2e4",
+             "value":"P"
+          }
+       ]
+    },
+    {
+       "id":"2",
+       "text":"\uc18c\uac1c\ud305\uc744 \ub098\uac04 \ub2f9\uc2e0, \uc11c\ub85c \uccab \ub9cc\ub0a8\uc5d0 \uc5b4\uc0c9\ud558\ub2e4",
+       "choices":[
+          {
+             "id":"3",
+             "text":"\uc900\ube44\ud574\uc628 \uba58\ud2b8\ub4e4\uc744 \uac74\ub124\uba70 \ub300\ud654\ub97c \uc2dc\uc791\ud55c\ub2e4",
+             "value":"S"
+          },
+          {
+             "id":"4",
+             "text":"\ubbf8\uc18c\ub97c \uc9c0\uc73c\uba70 \uc0c1\ub300\uac00 \ub9d0\ud560 \ub54c\uae4c\uc9c0 \uae30\ub2e4\ub9b0\ub2e4",
+             "value":"N"
+          }
+       ]
+    },
+    {
+       "id":"3",
+       "text":"\uc5f0\uc778\uc758 \uc0dd\uc77c \uc120\ubb3c\uc744 \uc900\ube44\ud560 \ub54c",
+       "choices":[
+          {
+             "id":"5",
+             "text":"\uacc4\ud68d\uc774 \ub2e4 \uc788\uc9c0! \ubbf8\ub9ac \uc0dd\uac01\ud574\uc11c \uc900\ube44\ud55c\ub2e4",
+             "value":"T"
+          },
+          {
+             "id":"6",
+             "text":"\ud5c9! \uc5b4\ub5a1\ud558\uc9c0,, \uc0dd\uc77c \uc9c1\uc804\uc5d0 \uae09\ud558\uac8c \uc900\ube44\ud55c\ub2e4",
+             "value":"F"
+          }
+       ]
+    },
+    {
+       "id":"4",
+       "text":"\uc5f0\uc778\uc774 \uae38\uc744 \uac00\ub2e4\uac00 \ub204\uad70\uac00\uc640 \ubd80\ub52a\ud614\ub2e4",
+       "choices":[
+          {
+             "id":"7",
+             "text":"\uc800\uae30\uc694! \uc0ac\uacfc\ud558\uc154\uc57c\uc8e0! \uc77c\ub2e8 \ub530\uc9c0\uace0 \ubcf8\ub2e4",
+             "value":"E"
+          },
+          {
+             "id":"8",
+             "text":"\uad1c\ucc2e\uc544? \ub2e4\uce5c\ub370 \uc5c6\uc5b4? \uc5f0\uc778\uc744 \uc0b4\ud540\ub2e4.",
+             "value":"I"
+          }
+       ]
+    },
+    {
+       "id":"5",
+       "text":"\ub204\uad70\uac00 \ub098\ub97c \uc9dc\uc99d \ub098\uac8c \ud588\uc744 \ub54c \uc5f0\uc778\uacfc \ud1b5\ud654\ud558\uba74",
+       "choices":[
+          {
+             "id":"9",
+             "text":"\uc624\ub298 \ub098\uc5d0\uac8c \uc77c\uc5b4\ub09c \uc77c\uc744 \ucc98\uc74c\ubd80\ud130 \ub05d\uae4c\uc9c0 \ub2e4 \uc774\uc57c\uae30\ud55c\ub2e4",
+             "value":"S"
+          },
+          {
+             "id":"10",
+             "text":"\uc77c\ub2e8 \uadf8 \uc0ac\ub78c \uc695\ubd80\ud130 \ud558\uace0, \uc788\uc5c8\ub358 \uc77c\uc740 \ub300\ucda9 \uc598\uae30\ud55c\ub2e4",
+             "value":"N"
+          }
+       ]
+    },
+    {
+       "id":"6",
+       "text":"\uc5f0\uc778\uacfc\uc758 \ub9d0\ub2e4\ud23c \uc911\uc774\ub2e4",
+       "choices":[
+          {
+             "id":"11",
+             "text":"\uc5f0\uc778\uc758 \uae30\ubd84\uc774 \uc870\uae08 \uc0c1\ud558\ub354\ub77c\ub3c4 \ud329\ud2b8\uac00 \uc6b0\uc120",
+             "value":"T"
+          },
+          {
+             "id":"12",
+             "text":"\ud329\ud2b8\ubcf4\ub2e4\ub294 \uc5f0\uc778\uc758 \uae30\ubd84\uc774 \uc6b0\uc120",
+             "value":"F"
+          }
+       ]
+    },
+    {
+       "id":"7",
+       "text":"\ub0b4\uac00 \uc120\ud638\ud558\ub294 \ub370\uc774\ud2b8",
+       "choices":[
+          {
+             "id":"13",
+             "text":"\ud56b\ud50c\uc5d0\uc11c \uc0ac\uc9c4\ub3c4 \ucc0d\uace0 \ub9db\uc9d1 \ud0d0\ubc29\ud558\uae30",
+             "value":"E"
+          },
+          {
+             "id":"14",
+             "text":"\uc9d1\uc5d0\uc11c \ud3b8\ud558\uac8c TV \ubcf4\uba70 \uaf41\ub0e5\uac70\ub9ac\uae30",
+             "value":"I"
+          }
+       ]
+    },
+    {
+       "id":"8",
+       "text":"\uc5f0\uc778\uacfc \ub370\uc774\ud2b8\ub97c \ud560 \ub54c \ub098\ub294 \uc8fc\ub85c",
+       "choices":[
+          {
+             "id":"15",
+             "text":"\ubbf8\ub9ac \uc608\uc57d\ud558\uace0 \uc5b4\ub514 \uac08\uc9c0 \ub370\uc774\ud2b8 \ucf54\uc2a4\ub97c \uc9e0\ub2e4",
+             "value":"J"
+          },
+          {
+             "id":"16",
+             "text":"\ub9cc\ub098\uc11c \uc0c1\ud669\ub530\ub77c \ub2f9\uae30\ub294 \uac83, \uac00\uace0 \uc2f6\uc740 \uacf3\uc744 \uac04\ub2e4",
+             "value":"P"
+          }
+       ]
+    },
+    {
+       "id":"9",
+       "text":"\uc5f0\uc778\uc774 \ub098\uc758 \uc0dd\uc77c\uc5d0 \uc120\ubb3c\uc744 \uc900\ub2e4\uba74",
+       "choices":[
+          {
+             "id":"17",
+             "text":"\uba3c\uc800 \ubb3c\uc5b4\ubcf4\uace0 \ub0b4\uac00 \ud544\uc694\ud55c \uac78 \uc92c\uc73c\uba74 \uc88b\uaca0\ub2e4",
+             "value":"T"
+          },
+          {
+             "id":"18",
+             "text":"\ub9c8\uc74c\uc774 \ub290\uaef4\uc9c0\uae30\ub9cc \ud558\uba74 \uc5b4\ub5a4 \uc120\ubb3c\uc774\ub77c\ub3c4 \uc88b\ub2e4",
+             "value":"F"
+          }
+       ]
+    },
+    {
+       "id":"10",
+       "text":"\ub098\ub294 \ud558\ub8e8 \uc885\uc77c \uc9d1\uc5d0 \uc788\uc73c\uba74",
+       "choices":[
+          {
+             "id":"19",
+             "text":"\uc544~~ \uc2ec\uc2ec\ud574~ \uc5b4\ub514\ub77c\ub3c4 \ub098\uac00\uc57c \ud574!",
+             "value":"E"
+          },
+          {
+             "id":"20",
+             "text":"\ub108\ubb34 \uc88b\uc544,, \uc9d1\uc774 \ucd5c\uace0!",
+             "value":"I"
+          }
+       ]
+    },
+    {
+       "id":"11",
+       "text":"\uc624\ub79c\ub9cc\uc5d0 \uc18c\uac1c\ud305\uc5d0 \ub098\uac14\ub294\ub370 \uc774\uc0c1\ud615\uc744 \ub9cc\ub0ac\ub2e4",
+       "choices":[
+          {
+             "id":"21",
+             "text":"\uc0c1\ub300\ubc29\uc774 \uc5b4\ub5a4 \uc0ac\ub78c\uc778\uc9c0 \uc54c\uace0 \uc2f6\uc5b4 \ud3ed\ud48d \uc9c8\ubb38\uc744 \ub358\uc9c4\ub2e4",
+             "value":"E"
+          },
+          {
+             "id":"22",
+             "text":"\ub098\uc5d0 \uad00\ud55c \uc88b\uc740 \uc774\uc57c\uae30\ub4e4\uc744 \uc740\uadfc \ub9ce\uc774 \ud558\uba74\uc11c \ub098\ub97c \uc5b4\ud544\ud55c\ub2e4",
+             "value":"I"
+          }
+       ]
+    },
+    {
+       "id":"12",
+       "text":"\uc5f0\uc778\uc774 \ud798\ub4e0 \uc0c1\ud669\uc5d0 \ucc98\ud588\ub2e4",
+       "choices":[
+          {
+             "id":"23",
+             "text":"\uc0c1\ud669\uc744 \ud574\uacb0\ud558\uae30 \uc704\ud574 \ud604\uc2e4\uc801\uc778 \ud574\uacb0\ucc45\uc744 \uc81c\uc2dc\ud55c\ub2e4",
+             "value":"J"
+          },
+          {
+             "id":"24",
+             "text":"\uc5f0\uc778\uc758 \uac10\uc815\uc5d0 \uacf5\uac10\ud558\uace0 \uc815\uc2e0\uc801\uc778 \uc9c0\uc9c0\ub97c \ud574\uc900\ub2e4",
+             "value":"P"
+          }
+       ]
+    },
+    {
+       "id":"13",
+       "text":"\uc5f0\uc778\uacfc \uae38\uc744 \uac77\ub2e4 \uc5f0\uc778\uc758 \ub3d9\ucc3d\uc744 \ub9cc\ub0ac\ub2e4",
+       "choices":[
+          {
+             "id":"25",
+             "text":"\ub9c8\uce58 \uc54c\ub358 \uc0ac\uc774\uc778 \uac83\ucc98\ub7fc \uac19\uc774 \uc774\uc57c\uae30\ud55c\ub2e4",
+             "value":"E"
+          },
+          {
+             "id":"26",
+             "text":"\ub09c \ud22c\uba85 \uc778\uac04.. \ub300\ud654\uac00 \ub05d\ub098\uae38 \uae30\ub2e4\ub9b0\ub2e4",
+             "value":"I"
+          }
+       ]
+    },
+    {
+       "id":"14",
+       "text":"\uc378\ud0c0\ub294 \uc0ac\ub78c\uc774 3\uc2dc\uac04 \ub118\uac8c \uc5f0\ub77d\uc774 \uc5c6\ub2e4",
+       "choices":[
+          {
+             "id":"27",
+             "text":"\uc2e0\uacbd\uc4f0\uc5ec,, \uc218\uc2dc\ub85c \ud578\ub4dc\ud3f0\uc744 \ub4e4\uc5ec\ub2e4\ubcf8\ub2e4",
+             "value":"J"
+          },
+          {
+             "id":"28",
+             "text":"\uc77c\uc774 \ubc14\uc05c\uac00? \ubcc4\ub85c \uc2e0\uacbd \uc548 \uc4f4\ub2e4",
+             "value":"P"
+          }
+       ]
+    },
+    {
+       "id":"15",
+       "text":"\uc560\uc778 : \ub098 \ubb50 \ubcc0\ud55c \uac70 \uc5c6\uc5b4?",
+       "choices":[
+          {
+             "id":"29",
+             "text":"\uc74c,, \uc5b4\ub514\ubcf4\uc790,, ",
+             "value":"S"
+          },
+          {
+             "id":"30",
+             "text":"\uba38\ub9ac \uc798\ub790\uc5b4? \ub2e8 \ubc88\uc5d0 \uc54c\uc544 \ucc28\ub9b0\ub2e4.",
+             "value":"N"
+          }
+       ]
+    },
+    {
+       "id":"16",
+       "text":"\uc5f0\uc778\uacfc \ud568\uaed8 \uac8c\uc784\uc911",
+       "choices":[
+          {
+             "id":"31",
+             "text":"\uc5f0\uc778\uc0ac\uc774\ub77c\ub3c4 \uc9c0\ub294\uac74 \ubabb \ucc38\uc9c0! \uc2b9\ubd80\uc695 \ubc1c\ub3d9",
+             "value":"J"
+          },
+          {
+             "id":"32",
+             "text":"\uc5f0\uc778\uc0ac\uc774\uc5d0 \uc774\uae30\uace0 \uc9c0\ub294\uac8c \ubb50\uac00 \uc911\uc694\ud574. \uc7ac\ubc0c\uc73c\uba74 \ub9cc\uc871",
+             "value":"P"
+          }
+       ]
+    },
+    {
+       "id":"17",
+       "text":"\uc5f0\uc778\uc5d0\uac8c\uc11c \"OO\uc57c \ubb50\ud574?\" \uce74\ud1a1\uc774 \uc654\ub2e4",
+       "choices":[
+          {
+             "id":"33",
+             "text":"\ud1a1\uc744 \uc77d\uc9c0 \uc54a\uace0 \ub0a8\uaca8\ub450\ub294 \uac74 \ucc38\uc744 \uc218 \uc5c6\uc5b4! \ubc14\ub85c \ub2f5\ud55c\ub2e4",
+             "value":"S"
+          },
+          {
+             "id":"34",
+             "text":"\ud1a1\uc774 \uc628 \uac78 \uc54c\uc544\ub3c4 \ub0b4 \ubcfc\uc77c\uc774 \uc6b0\uc120\uc774\uc57c! \ub098\uc911\uc5d0 \ub2f5\ud55c",
+             "value":"N"
+          }
+       ]
+    },
+    {
+       "id":"18",
+       "text":"\uc5f0\uc778\uacfc\uc758 \uae30\ub150\uc77c \ub0a0, \ud68c\uc0ac\uc5d0 \uc77c\uc774 \uc0dd\uacbc\ub2e4",
+       "choices":[
+          {
+             "id":"35",
+             "text":"\uc5f0\uc778\uacfc\uc758 \uc57d\uc18d\uc744 \ucde8\uc18c\ud558\uace0 \uc57c\uadfc",
+             "value":"T"
+          },
+          {
+             "id":"36",
+             "text":"\uc57c\uadfc\uc774\uace0 \ubb50\uace0 \uc624\ub298\uc740 \uc5f0\uc778\uc744 \ub9cc\ub098\ub7ec \uac04\ub2e4",
+             "value":"F"
+          }
+       ]
+    },
+    {
+       "id":"19",
+       "text":"\uc5f0\uc778\uacfc \ubc25 \uba39\uc73c\ub7ec \uac04\ub2e4. \uc5b4\ub514\ub85c \uac08\uae4c?",
+       "choices":[
+          {
+             "id":"37",
+             "text":"\uac80\uc99d\ub41c \ub9db\uc9d1\uc774 \ucd5c\uace0! \ub2e8\uace8\uc9d1 \uace0\uace0!",
+             "value":"S"
+          },
+          {
+             "id":"38",
+             "text":"\uc800\uae30 \uc0c8\ub85c\uc6b4 \uc74c\uc2dd\uc810 \ubc1c\uacac! \uc0c8 \ub9db\uc9d1 \ub3c4\uc804!",
+             "value":"N"
+          }
+       ]
+    },
+    {
+       "id":"20",
+       "text":"\uc5f0\uc778\uc774 \uae30\ub150\uc77c\uc744 \uae4c\uba39\uc5b4\uc11c \ud654\uac00 \ub0ac\ub2e4",
+       "choices":[
+          {
+             "id":"39",
+             "text":"\ub17c\ub9ac\uc801\uc73c\ub85c \ub530\uc9c0\uba70 \ud654\ub97c \ub0b8\ub2e4.",
+             "value":"T"
+          },
+          {
+             "id":"40",
+             "text":"\uc5b4\ub5bb\uac8c \uc774\ub7f4 \uc218\uac00 \uc788\uc5b4? \ub0a0 \uc0ac\ub791\ud558\uae34 \ud574?\ub77c\uba70 \ud654\ub97c \ub0b8\ub2e4.",
+             "value":"F"
+          }
+       ]
+    }
+ ]

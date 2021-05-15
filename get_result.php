@@ -1,19 +1,13 @@
 <?php include 'db.php';
-
                     
-    $result = $_GET["result"];
+    $query = 'SELECT * FROM result';
 
+    $stmt = $db->query($query);
 
-    $query = 'SELECT * FROM result WHERE value = ? LIMIT 1';
-
-    $stmt = $db->prepare($query);
-    $stmt->execute(array($result));
-
-    
     $response = [];
 
     while ($row = $stmt->fetch()) {
-        $response = array(
+        $response[$row['value']] = array(
              'id'=> $row['id'],
              'value'=> $row['value'],
              'title'=> $row['title'],
