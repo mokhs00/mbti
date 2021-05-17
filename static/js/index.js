@@ -1,49 +1,19 @@
-// router를 만들고 
-
-import App from './App.js'
-// import route from './route.js'
-
-route = route({})
-
+import MainPage from './Components/MainPage.js'
+import QuestionPage from './Components/QuestionPage.js'
+import ResultPage from './Components/ResultPage.js'
+import Route from './Route.js'
 
 const $app = document.querySelector('.app')
 
-const $header = document.querySelector('.header')
+const routes = [
+    { path: '/', view: MainPage},
+    { path: '/question', view: QuestionPage},
+    { path: '/result/:value', view: ResultPage}  
+]
 
 
-$header.addEventListener('click', e => {
-    test()
-})
-
-$app.querySelector('.start-btn').addEventListener('click', e => {
-    test()    
-})
-
-
-function test() {
-    clear()
-    new App($app)
-}
-
-function clear() {
-    $app.innerHTML = ''
-       
-}
-
-async function route() {
-
-    const routes = [
-        { path: '/', view: App },
-    ]
-
-    // const potentialMatches
-
-    
-}
-
-
-function init() {
-    
+const init = () => {
+    new Route({ $app, routes })
 }
 
 init()

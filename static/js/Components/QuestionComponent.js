@@ -14,6 +14,7 @@ export default function QuestionComponent({ $app, state, onClick }) {
             },
         ]       
   */
+
   this.state = state
   
   this.onClick = onClick

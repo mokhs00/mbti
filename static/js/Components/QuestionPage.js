@@ -1,18 +1,17 @@
-import QuestionComponent from './Components/QuestionComponent.js'
-import ResultComponent from './Components/ResultComponent.js'
-import { getQuestions, getResults } from './api.js'
+import QuestionComponent from './QuestionComponent.js'
+import { getQuestions }  from '../api.js'
 
-export default function QuestionPage($app) {
+export default function QuestionPage({ $app , $route }) {
 
     // index, questions: [], value: [], 
 
   this.state = {
     index: 0,
     questions: [],
-    value: [],
-    results: null,
-    result: null
+    value: []    
   }
+
+  
 
   const questionComponent = new QuestionComponent({
       $app,
@@ -34,22 +33,7 @@ export default function QuestionPage($app) {
       }
   })
 
-  const resultComponent = new ResultComponent({
-      $app,
-      state: this.state.result,
-      onClick : (e) => {
-          const node = e.target.closest('.card')
-          if(node){
-              const { value } = node.dataset
-              this.setState({
-                  ...this.state,
-                  result: this.state.results[value]
-              })
-          }
-
-
-      }
-  })
+  
 
 
 
@@ -70,15 +54,9 @@ export default function QuestionPage($app) {
 
   this.testEnd = async (values) => {
     // 계산하는 동안 로딩처리    
-    const calValue = await this.calculateResult(values)       
-    
+    const calValue = await this.calculateResult(values)
 
-    this.setState({
-        ...this.state,
-        result: this.state.results[calValue]
-    })
-    
-
+    $route.push(`result/${calValue}`)
   }
 
   this.calculateResult = async (values) => {
@@ -105,15 +83,12 @@ export default function QuestionPage($app) {
   this.init = async () => {
 
     // TODO: loading 처리
-
     // request해서 받아온 초기 값 설정해주기
     const questions = await getQuestions()
-    const results = await getResults()
     
     this.setState({
       ...this.state,
       questions,
-      results
     })
     
     
