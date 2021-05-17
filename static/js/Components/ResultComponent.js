@@ -39,6 +39,8 @@ const percent = {
 // },
 // }
 
+const ROOT_IMAGE_PATH = "/static"
+
 export default function ResultComponent({ $app, state, onClick}) {
     // Object{id, value, title, text, img_path, positive, negative}
     this.state = state   
@@ -60,12 +62,11 @@ export default function ResultComponent({ $app, state, onClick}) {
         }        
         
         this.$target.innerHTML = /*html*/
-        `            
-            
+        `                        
             <div class="my-type">나의 연애 유형은</div>
             <div class="title">${this.state.title}</div>
             <div class="value">${this.state.value}</div>            
-            <img class="image" src="${this.state.img_path}">
+            <img class="image" src="${ROOT_IMAGE_PATH}${this.state.img_path}">
             <div class="tags">
                 #한국 분포율 ${percent[this.state.value]}%
             </div>
@@ -77,7 +78,7 @@ export default function ResultComponent({ $app, state, onClick}) {
                     <div class="inner">                        
                         <div class="value">${this.state.positive.value}</div>
                         <div class="title">${this.state.positive.title}</div>
-                        <div><img src="${this.state.positive.img_path}"></div>                    
+                        <div><img src="${ROOT_IMAGE_PATH}${this.state.positive.img_path}"></div>                    
                     </div>
                 </div>
 
@@ -86,11 +87,10 @@ export default function ResultComponent({ $app, state, onClick}) {
                     <div class="inner">                        
                         <div class="value">${this.state.negative.value}</div>
                         <div class="title">${this.state.negative.title}</div>
-                        <div><img src="${this.state.negative.img_path}"></div>
+                        <div><img src="${ROOT_IMAGE_PATH}${this.state.negative.img_path}"></div>
                     </div>
                 </div>
-            </div>
-            
+            </div>            
         `
 
     }

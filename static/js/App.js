@@ -2,7 +2,7 @@ import QuestionComponent from './Components/QuestionComponent.js'
 import ResultComponent from './Components/ResultComponent.js'
 import { getQuestions, getResults } from './api.js'
 
-export default function App($app) {
+export default function QuestionPage($app) {
 
     // index, questions: [], value: [], 
 
