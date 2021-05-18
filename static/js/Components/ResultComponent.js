@@ -47,18 +47,19 @@ export default function ResultComponent({ $app, state, onClick}) {
     this.onClick = onClick
     
     this.$target = document.createElement('div')
-    this.$target.className = 'result'
+    this.$target.className = 'result'    
+    this.$target.addEventListener('click', this.onClick)
+
+    $app.appendChild(this.$target)            
 
     this.setState = (nextState) =>{
         this.state = nextState
         this.render()
     }
 
-    this.render = () => {
-        if (this.state) {
-            $app.innerHTML = ''            
-            $app.appendChild(this.$target)            
-            this.$target.addEventListener('click', this.onClick)
+    this.render = async () => {
+        if (!this.state) {            
+            return
         }        
         
         this.$target.innerHTML = /*html*/
@@ -94,7 +95,8 @@ export default function ResultComponent({ $app, state, onClick}) {
         `
 
     }
-    
+
+    this.render()
     
 }
 

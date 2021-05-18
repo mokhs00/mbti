@@ -39,12 +39,6 @@ export default function QuestionPage({ $app , $route }) {
 
   this.setState = (nextState) => {   
     this.state = nextState
-
-    if (this.state.result) {
-        resultComponent.setState(this.state.result)
-        return
-    }
-
     questionComponent.setState({
         index: this.state.index,
         questions: this.state.questions

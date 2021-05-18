@@ -4,6 +4,10 @@ import ResultPage from './Components/ResultPage.js'
 import Route from './Route.js'
 
 const $app = document.querySelector('.app')
+const $header = document.querySelector('.header')
+
+
+
 
 const routes = [
     { path: '/', view: MainPage},
@@ -13,7 +17,10 @@ const routes = [
 
 
 const init = () => {
-    new Route({ $app, routes })
+    const $route = new Route({ $app, routes })
+    $header.addEventListener('click', () => {
+        $route.push('/')
+    })
 }
 
 init()

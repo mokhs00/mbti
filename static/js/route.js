@@ -1,25 +1,33 @@
 export default function Route({ $app, routes }) {  
     this.routes = routes    
 
-    this.route = () => {
-        let matchPath = routes.find(route => route.path === location.pathname)
+    this.route =  () => {
+        const potentialMatches = routes.map(route => {
+            return {
+                route,
+                result: location.pathname.match(this.pathToRegex(route.path))
+            }
+        })
 
+        let match =  potentialMatches.find(route => route.result !== null)
+        
     
-        if(!matchPath){
-            matchPath = routes[0]
+        if(!match){
+            match = {
+                route: this.routes[0]
+            }
+            history.replaceState(null, null, `${ match.route.path }`)
         }
-    
-    
-        history.pushState(null, null, matchPath.path)        
 
-        console.log(matchPath);
-        console.log($app);
-        console.log(this.pathToRegex('/result/:id'));
+        const props = this.getParams(match)
+
 
         this.clear()
-        new matchPath.view({
+
+        new match.route.view({
              $app,
-             $route: this 
+             $route: this,
+             props: props
             })
         
     
@@ -31,11 +39,11 @@ export default function Route({ $app, routes }) {
     }
 
     document.addEventListener('DOMContentLoaded', () => {
-        this.route()        
+        this.route()
     })
  
-    document.addEventListener('popstate', () => {
-        this.route()        
+    window.addEventListener('popstate', () => {        
+        this.route()
     })
 
     this.clear = () => {
@@ -43,7 +51,16 @@ export default function Route({ $app, routes }) {
     }
 
     this.pathToRegex = path => new RegExp('^' + path.replace(/\//g, '\\/').replace(/:\w+/g, '(.+)') + "$")
+    
+    this.getParams = match => {
+        const values = match.result.slice(1);
+        
+        const keys = Array.from(match.route.path.matchAll(/:(\w+)/g)).map(result => result[1]);
 
+        return Object.fromEntries(keys.map((key,i) => {
+            return [key, values[i]]
+        }))
+    }
 
     
 }
