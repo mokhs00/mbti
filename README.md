@@ -17,7 +17,17 @@
 
 ## 기술 스택 
 
-||||
-|---|---|---|
-|```backEnd```| ```php```|
-|```frontEnd```| ```javaScript```|
+|                |                  |     |
+| -------------- | ---------------- | --- |
+| ```backEnd```  | ```php```        |
+| ```frontEnd``` | ```javaScript``` |
+
+
+# HOW TO RUN
+
+기본 80번 port에서 작동합니다.
+
+```
+npm i 
+npm start
+```
